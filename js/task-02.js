@@ -7,17 +7,20 @@ const ingredients = [
   'Condiments',
 ];
 
-const ul = document.querySelector("#ingredients");
 
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ul.appendChild(li);
+const arrayTemp = [];
 
-  console.log(`Добавлен ингредиент: ${ingredient}`);
-});
+for (let ingredient of ingredients) {
+    const item = document.createElement("li");
+    item.textContent = ingredient;
+    item.class = "list";
+    arrayTemp.push(item);
+};
 
+const ingredientsList = document.querySelector("#ingredients");
+
+const ingredientsApart = [...arrayTemp];
+ingredientsList.append(...ingredientsApart);
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
